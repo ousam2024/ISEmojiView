@@ -7,7 +7,7 @@
 
 import Foundation
 
-final public class KeyboardSettings {
+@objc final public class KeyboardSettings: NSObject {
     
     // MARK: - Public variables
     
@@ -24,7 +24,7 @@ final public class KeyboardSettings {
     public var isShowPopPreview: Bool = true
     
     /// The max number of recent emojis, if set 0, nothing will be shown. Default is 50.
-    public var countOfRecentsEmojis: Int = MaxCountOfRecentsEmojis
+    @objc public var countOfRecentsEmojis: Int = MaxCountOfRecentsEmojis
     
     /// Need to show change keyboard button
     /// This button is located in `Categories` bottom view.
@@ -35,7 +35,7 @@ final public class KeyboardSettings {
     
     // MARK: - Init functions
     
-    public init(bottomType: BottomType) {
+    @objc public init(bottomType: BottomType) {
         self.bottomType = bottomType
     }
     
