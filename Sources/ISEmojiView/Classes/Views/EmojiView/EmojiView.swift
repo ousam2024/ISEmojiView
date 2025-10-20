@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-public enum BottomType: Int {
+@objc public enum BottomType: Int {
     case pageControl, categories
 }
 
-public protocol EmojiViewDelegate: AnyObject {
+@objc public protocol EmojiViewDelegate: AnyObject {
     
     func emojiViewDidSelectEmoji(_ emoji: String, emojiView: EmojiView)
     func emojiViewDidPressChangeKeyboardButton(_ emojiView: EmojiView)
@@ -73,7 +73,7 @@ final public class EmojiView: UIView {
     
     // MARK: - Public variables
     
-    public weak var delegate: EmojiViewDelegate?
+    @objc public weak var delegate: EmojiViewDelegate?
     
     // MARK: - Private variables
     
@@ -102,7 +102,7 @@ final public class EmojiView: UIView {
         setupSubviews()
     }
     
-    public init(keyboardSettings: KeyboardSettings) {
+    @objc public init(keyboardSettings: KeyboardSettings) {
         super.init(frame: .zero)
         
         self.keyboardSettings = keyboardSettings
@@ -194,7 +194,7 @@ extension EmojiView: PageControlBottomViewDelegate {
 
 extension EmojiView: CategoriesBottomViewDelegate {
     
-    func categoriesBottomViewDidSelectCategory(_ category: Category, bottomView: CategoriesBottomView) {
+    func categoriesBottomViewDidSelecteCategory(_ category: Category, bottomView: CategoriesBottomView) {
         emojiCollectionView?.scrollToCategory(category)
     }
     
